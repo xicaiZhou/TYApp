@@ -1,0 +1,6 @@
+module JXPatternLock {
+  umbrella header "JXPatternLock-umbrella.h"
+
+  export *
+  module * { export * }
+}

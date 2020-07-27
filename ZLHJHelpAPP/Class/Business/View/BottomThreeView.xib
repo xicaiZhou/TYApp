@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0sq-o6-vBf" customClass="BottomThreeView" customModule="中联助手" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zp4-4b-Mbg">
+                    <rect key="frame" x="144.5" y="10" width="125" height="50"/>
+                    <color key="backgroundColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ECa-W1-k5L"/>
+                    </constraints>
+                    <state key="normal" title="征信">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilh-22-61p">
+                    <rect key="frame" x="10" y="10" width="124.5" height="50"/>
+                    <color key="backgroundColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="9Kd-PB-pfX"/>
+                    </constraints>
+                    <state key="normal" title="上一步">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcU-zB-aPL">
+                    <rect key="frame" x="279.5" y="10" width="124.5" height="50"/>
+                    <color key="backgroundColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Nt6-3R-gjx"/>
+                    </constraints>
+                    <state key="normal" title="下一步">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="zp4-4b-Mbg" firstAttribute="leading" secondItem="Ilh-22-61p" secondAttribute="trailing" constant="10" id="Bg5-q3-JcM"/>
+                <constraint firstItem="zp4-4b-Mbg" firstAttribute="centerX" secondItem="0sq-o6-vBf" secondAttribute="centerX" id="Mty-ZV-m4v"/>
+                <constraint firstItem="zp4-4b-Mbg" firstAttribute="width" secondItem="WcU-zB-aPL" secondAttribute="width" id="NlY-CW-4wE"/>
+                <constraint firstItem="Ilh-22-61p" firstAttribute="leading" secondItem="grI-zs-0FG" secondAttribute="leading" constant="10" id="R0S-gS-sOf"/>
+                <constraint firstItem="WcU-zB-aPL" firstAttribute="leading" secondItem="zp4-4b-Mbg" secondAttribute="trailing" constant="10" id="RC2-MQ-eql"/>
+                <constraint firstItem="WcU-zB-aPL" firstAttribute="width" secondItem="Ilh-22-61p" secondAttribute="width" id="aWQ-qE-qGT"/>
+                <constraint firstItem="Ilh-22-61p" firstAttribute="centerY" secondItem="0sq-o6-vBf" secondAttribute="centerY" id="cqb-6x-fEk"/>
+                <constraint firstItem="zp4-4b-Mbg" firstAttribute="width" secondItem="Ilh-22-61p" secondAttribute="width" id="gye-pv-Kfw"/>
+                <constraint firstItem="zp4-4b-Mbg" firstAttribute="top" secondItem="0sq-o6-vBf" secondAttribute="top" constant="10" id="hjP-sM-1Is"/>
+                <constraint firstItem="WcU-zB-aPL" firstAttribute="centerY" secondItem="0sq-o6-vBf" secondAttribute="centerY" id="mZg-pR-UTG"/>
+                <constraint firstItem="grI-zs-0FG" firstAttribute="trailing" secondItem="WcU-zB-aPL" secondAttribute="trailing" constant="10" id="opl-aO-w0N"/>
+                <constraint firstItem="zp4-4b-Mbg" firstAttribute="centerY" secondItem="0sq-o6-vBf" secondAttribute="centerY" id="ylR-Mf-yiJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="grI-zs-0FG"/>
+            <connections>
+                <outlet property="PerviousStepBtn" destination="Ilh-22-61p" id="sJ8-Rj-NXc"/>
+                <outlet property="creditBtn" destination="zp4-4b-Mbg" id="8j4-Sg-vk5"/>
+                <outlet property="nextBtn" destination="WcU-zB-aPL" id="Tx3-8Z-cNk"/>
+            </connections>
+            <point key="canvasLocation" x="-291.304347826087" y="-115.51339285714285"/>
+        </view>
+    </objects>
+</document>

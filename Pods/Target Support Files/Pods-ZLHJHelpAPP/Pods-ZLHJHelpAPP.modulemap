@@ -1,0 +1,6 @@
+module Pods_ZLHJHelpAPP {
+  umbrella header "Pods-ZLHJHelpAPP-umbrella.h"
+
+  export *
+  module * { export * }
+}
