@@ -32,22 +32,35 @@ class H5: BaseViewController {
         return progress
     }()
     
-    
+    @objc func notificationAction(noti: Notification) {
+        print("huilaile")
+        let str = "userInfo(" + Utils.getUserInfo().kj.JSONString() + ")"
+        self.webView.evaluateJavaScript(str) { (response, error) in
+            print(response ?? "")
+        }
+    }
+    @objc func notificationAction1(noti: Notification) {
+        print("kill干掉")
+        viewDidLoad()
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationAction), name: NSNotification.Name(rawValue: "notification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationAction1), name: NSNotification.Name(rawValue: "notification1"), object: nil)
+
         iSTouchIDOrFaceID = UserDefaults.standard.bool(forKey: "iSTouchIDOrFaceID")
         iSGesLogin = UserDefaults.standard.bool(forKey: "iSGesLogin")
         let path = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "vue")
 
         let mapwayURL = URL(fileURLWithPath: path!)
-//        let mapwayURL = URL(string: "http://localhost:8081/#/")!
+//        let mapwayURL = URL(string: "http://192.168.7.30:8080/#/")!
         let mapwayRequest = URLRequest(url: mapwayURL)
         let conf = WKWebViewConfiguration()
         conf.userContentController = WKUserContentController()
         conf.preferences.javaScriptEnabled = true
         conf.selectionGranularity = WKSelectionGranularity.character
-        /// h5 调用 swift 提供的方法
+//        /// h5 调用 swift 提供的方法
         conf.userContentController.add(self, name: h5ToSwift)
         conf.userContentController.add(self, name: updata)
         webView = WKWebView( frame: CGRect(x:0, y:KHeight_NavBar,width:kScreenWidth, height:kScreenHeight - KHeight_NavBar - (isiPhoneX ? 34 : 0)),configuration:conf)
@@ -63,12 +76,12 @@ class H5: BaseViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        
+
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         self.progressView.frame = CGRect(x:0,y:KHeight_NavBar,width:kScreenWidth,height:2)
         self.progressView.isHidden = false
         UIView.animate(withDuration: 1.0) {
@@ -76,8 +89,9 @@ class H5: BaseViewController {
         }
     }
     deinit {
+        NotificationCenter.default.removeObserver(self)
         print("==============","\(self)","被销毁")
-        
+
     }
     
     func showLeftNavigationItem(){
@@ -92,9 +106,9 @@ class H5: BaseViewController {
             }else if self?.titleText == "查询"{
                 js = "showCarLoanListSearch()"
             }
-            
+
             self!.webView.evaluateJavaScript(js) { (response, error) in
-                
+
             }
         }
         // 返回按钮
@@ -106,8 +120,8 @@ class H5: BaseViewController {
         goBackBtn.setTitle(" 返回", for: UIControl.State.highlighted)
         goBackBtn.setTitleColor(systemColor, for: UIControl.State.normal)
         goBackBtn.addTarget(self, action: #selector(goBack), for: UIControl.Event.touchUpInside)
-        
-        
+
+
     }
     
     @objc func goBack(){
@@ -399,7 +413,7 @@ extension H5: WKScriptMessageHandler {
             print("JavaScript is sending a message.body \(message.body)")
             
             let js = (message.body as! [String:Any])["value"] as! [String:Any]
-            self.open(maxCountOfImage: 2, result: { (images) in
+            self.open(maxCountOfImage: 9, result: { (images) in
                 let count = images.count;
                 // 接口不支持多张
                 var index = 0
@@ -413,15 +427,12 @@ extension H5: WKScriptMessageHandler {
                             "filePath": value as! String,
                         ]
                         XCNetWorkTools().requestData(type: .post, api: "/api/loanFileList/fileDetails/add", encoding: .JSON, parameters: param, success: { (res) in
-                            
                             index += 1
-                            
                             if(count == index){
                                 HUD.flash(.success, delay: 1)
                                 self.webView.evaluateJavaScript("uploadData()") { (response, error) in
                                     print(response ?? "")
                                 }
-                                
                             }
                         }) { (err) in
                             index += 1

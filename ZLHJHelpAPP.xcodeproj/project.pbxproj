@@ -11,7 +11,6 @@
 		220A62D424C06E240013A31D /* SettingFourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220A62D024C06E240013A31D /* SettingFourCell.xib */; };
 		220A62D524C06E240013A31D /* SettingThreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A62D124C06E240013A31D /* SettingThreeCell.swift */; };
 		220A62D624C06E240013A31D /* SettingThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220A62D224C06E240013A31D /* SettingThreeCell.xib */; };
-		220DFEFC24CDDE340033BC18 /* vue in Resources */ = {isa = PBXBuildFile; fileRef = 220DFEFB24CDDE340033BC18 /* vue */; };
 		2215F2E32329EE2100274C9D /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215F2E22329EE2100274C9D /* NibLoadable.swift */; };
 		2215F3172330B83600274C9D /* Array-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215F3162330B83600274C9D /* Array-Extension.swift */; };
 		2228AD94247BC652003CFA02 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228AD93247BC652003CFA02 /* AudioManager.swift */; };
@@ -45,6 +44,7 @@
 		22BCCE772321178E00AA0CD5 /* XCNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BCCE642321178D00AA0CD5 /* XCNetwork.swift */; };
 		22BCCE7D2321178E00AA0CD5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BCCE6B2321178D00AA0CD5 /* Utils.swift */; };
 		22BCCF1C2322110800AA0CD5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BCCF1B2322110800AA0CD5 /* UserModel.swift */; };
+		22C964D324D42B8200ADC084 /* vue in Resources */ = {isa = PBXBuildFile; fileRef = 22C964D224D42B8200ADC084 /* vue */; };
 		22CA0DD323320A8200AEB727 /* ForgetPasswordOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA0DD123320A8200AEB727 /* ForgetPasswordOneVC.swift */; };
 		22CA0DD423320A8200AEB727 /* ForgetPasswordOneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CA0DD223320A8200AEB727 /* ForgetPasswordOneVC.xib */; };
 		22CA0DD723320FF400AEB727 /* ForgetPasswordTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA0DD523320FF400AEB727 /* ForgetPasswordTwoVC.swift */; };
@@ -74,7 +74,6 @@
 		220A62D024C06E240013A31D /* SettingFourCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingFourCell.xib; sourceTree = "<group>"; };
 		220A62D124C06E240013A31D /* SettingThreeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingThreeCell.swift; sourceTree = "<group>"; };
 		220A62D224C06E240013A31D /* SettingThreeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingThreeCell.xib; sourceTree = "<group>"; };
-		220DFEFB24CDDE340033BC18 /* vue */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vue; sourceTree = "<group>"; };
 		2215F2E22329EE2100274C9D /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		2215F3162330B83600274C9D /* Array-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array-Extension.swift"; sourceTree = "<group>"; };
 		2228AD93247BC652003CFA02 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		22BCCE6B2321178D00AA0CD5 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		22BCCE812321189B00AA0CD5 /* ZLHJHelpAPP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZLHJHelpAPP-Bridging-Header.h"; sourceTree = "<group>"; };
 		22BCCF1B2322110800AA0CD5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		22C964D224D42B8200ADC084 /* vue */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vue; sourceTree = "<group>"; };
 		22CA0DD123320A8200AEB727 /* ForgetPasswordOneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordOneVC.swift; sourceTree = "<group>"; };
 		22CA0DD223320A8200AEB727 /* ForgetPasswordOneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordOneVC.xib; sourceTree = "<group>"; };
 		22CA0DD523320FF400AEB727 /* ForgetPasswordTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordTwoVC.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 		22BCCE1F2320EA8900AA0CD5 /* ZLHJHelpAPP */ = {
 			isa = PBXGroup;
 			children = (
-				220DFEFB24CDDE340033BC18 /* vue */,
+				22C964D224D42B8200ADC084 /* vue */,
 				22BCCE85232118F900AA0CD5 /* Supporting Files */,
 				22BCCE532321178D00AA0CD5 /* Class */,
 				22BCCE5B2321178D00AA0CD5 /* Utils */,
@@ -512,7 +512,7 @@
 				227AEE1524970CE500B8BF0A /* 清晨.mp3 in Resources */,
 				99C898A1246ABF0C003B93FB /* help.pdf in Resources */,
 				22BCCE282320EA8B00AA0CD5 /* Assets.xcassets in Resources */,
-				220DFEFC24CDDE340033BC18 /* vue in Resources */,
+				22C964D324D42B8200ADC084 /* vue in Resources */,
 				220A62D424C06E240013A31D /* SettingFourCell.xib in Resources */,
 				226186D42328EC75003A25E6 /* LoginVC.xib in Resources */,
 				22BCCE262320EA8900AA0CD5 /* Main.storyboard in Resources */,
@@ -790,7 +790,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TY.HelpAPP;
 				PRODUCT_NAME = "拓炎车金融";
 				PROVISIONING_PROFILE_SPECIFIER = TYDev;
@@ -817,7 +817,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.TY.HelpAPP;
 				PRODUCT_NAME = "拓炎车金融";
 				PROVISIONING_PROFILE_SPECIFIER = TYDis;

@@ -63,7 +63,7 @@ class AudioManager: NSObject {
         self.backgroundAudioPlayer?.delegate = self
     }
     
-//主要修改了这里
+    //主要修改了这里
     private func setupListener() {
         
         NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -71,11 +71,11 @@ class AudioManager: NSObject {
         
         NotificationCenter.default.addObserver(self, selector: #selector(audioSessionInterruption(notification:)), name: AVAudioSession.interruptionNotification, object: nil)
         
-       
+        
     }
     
 }
- 
+
 // MARK: - 扩展 监听通知
 extension AudioManager {
     /// 进入后台 播放无声音乐
@@ -149,13 +149,20 @@ extension AudioManager {
     }
     @objc func timerTask() {
         self.backgroundTimeLength += 1
+        if(self.backgroundTimeLength >= 600){
+            exit(0)
+//            if(UserDefaults.standard.bool(forKey: "isLogin")){
+//                NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "notification1"), object: "")
+//                removeTimer()
+//            }
+        }
     }
     fileprivate func hintBackgroundTimeLength() {
-        let message = "本次后台持续时间:\(self.backgroundTimeLength)s"
-//        HintTool.hint(message)
+        
+        //        HintTool.hint(message)
     }
 }
- 
+
 // MARK: - 扩展 播放代理
 extension AudioManager: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {

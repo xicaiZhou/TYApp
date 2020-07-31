@@ -8,9 +8,9 @@
 
 
 
-//ipa包地址：https://www.huijiefinance.net/zlhj/app/ZLHJHELP/ZLHJHelpAPP.ipa
-//小图https://www.huijiefinance.net/zlhj/IOS/logo2.png
-//大图https://www.huijiefinance.net/zlhj/IOS/logo1.png
+//ipa包地址： http://tuoyan.vipgz1.idcfengye.com/api/resource/TYApp/iOS/ZLHJHelpAPP.ipa
+//小图http://tuoyan.vipgz1.idcfengye.com/api/resource/TYApp/iOS/logo/logo2.png
+//大图http://tuoyan.vipgz1.idcfengye.com/api/resource/TYApp/iOS/logo/logo1.png
 
 
 import UIKit
@@ -43,8 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(false, forKey: "iSTouchIDOrFaceID") // 用户是否允许TouchID或FaceID登录
             Utils.updatePassword("")
             Utils.saveMaxErrorCount(count: 5)
-            
         }
+        
+        //清除缓存
+        Utils.clearCache()
         
         if !UserDefaults.standard.bool(forKey: "isLogin") {
             if UserDefaults.standard.bool(forKey: "iSGesLogin") && Utils.getMaxErrorCount() > 0{
@@ -99,7 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        
+        if(UserDefaults.standard.bool(forKey: "isLogin")){
+            NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "notification"), object: "")
+        }
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
