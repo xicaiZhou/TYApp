@@ -61,8 +61,9 @@ class Utils{
     
     static func updateApp(){
         
-        UIApplication.shared.openURL(URL(string: "itms-services://?action=download-manifest&url=https://www.huijiefinance.net/zlhj/app/ZLHJHELP/manifest.plist")!)
-        
+
+        UIApplication.shared.openURL(URL(string: "https://www.pgyer.com/1ob9")!)
+
         UIView.animate(withDuration: 1.0, animations: {
             Window?.alpha = 0
             Window?.frame = CGRect(x: 0, y: kScreenWidth, width: 0, height: 0)

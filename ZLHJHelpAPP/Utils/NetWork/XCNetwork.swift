@@ -98,8 +98,8 @@ private func XCNetwork(network : NetworkEnvironment = CurrentNetWork){
         Base_Url = "http://192.168.90.101:8080/zlhj_interface/appHelper/"
         
     }else{
-        Base_Url = "http://tuoyan.vipgz1.idcfengye.com"
-//        Base_Url = "http://dacsit.vipgz1.idcfengye.com"
+//        Base_Url = "http://tuoyan.vipgz1.idcfengye.com"
+                Base_Url = "http://dacsit.vipgz1.idcfengye.com"
     }
 }
 
@@ -158,6 +158,12 @@ extension XCNetWorkTools {
             paramEncoding = JSONEncoding.default
         }
         print("参数：",parameters)
+        /// 设置请求头
+        let headers :HTTPHeaders = [
+            "Accept": "application/json",
+            "Content-Type" : "application/json",
+            "token":Utils.getToken()
+        ]
         self.sessionManager!.request(url,
                                      method: type,
                                      parameters: parameters,
@@ -178,13 +184,13 @@ extension XCNetWorkTools {
                         let msg = dic["message"] as! String
                         if code == 200 {
                             success(data as Any)
-                        }else if code == 9999 {
+                        }else if code == 5109 {
                             HUD.hide()
                             
-                            //                                let message = msg
-                            //                                let msg = message["updateMsg"] as! String
-                            //                                let versionName = message["versionName"] as! String
-                            //                                AppUpdateAlert.showUpdateAlert(version: versionName, description: msg)
+                            let versionInfo : [String:Any] = (data as! [String:Any])["versionInfo"] as! [String:Any]
+                            let msg = versionInfo["updateMsg"] as! String
+                            let versionName = versionInfo["versionName"] as! String
+                            AppUpdateAlert.showUpdateAlert(version: versionName, description: msg)
                             
                         }
                         else
@@ -267,7 +273,7 @@ extension XCNetWorkTools {
                         
                     }
                     upload.uploadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
-//                        print("图片上传进度: \(progress.fractionCompleted)")
+                        //                        print("图片上传进度: \(progress.fractionCompleted)")
                     }
                 case .failure(let encodingError):
                     print(encodingError)

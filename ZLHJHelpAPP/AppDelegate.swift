@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //清除缓存
         Utils.clearCache()
         
-        if !UserDefaults.standard.bool(forKey: "isLogin") {
+//        if !UserDefaults.standard.bool(forKey: "isLogin") {
             if UserDefaults.standard.bool(forKey: "iSGesLogin") && Utils.getMaxErrorCount() > 0{
                 let vc = PatternLockSettingVC()
                 vc.config = ArrowConfig()
@@ -58,6 +58,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let param = [
                         "username": Utils.getUserName(),
                         "password": Utils.getPassword(),
+                        "appOs": "2",
+                        "versionName": Utils.appVersion()
                         ]
                     HUD.show(.progress)
                     XCNetWorkTools().requestData(type: .post, api: "/api/loginWithoutCode", encoding: .JSON, parameters: param, success: { (res) in
@@ -73,7 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         
                     }) { (error) in
                         HUD.flash(.error, delay: 1.0)
-
                     }
                 }
                 self.window?.rootViewController = vc
@@ -84,9 +85,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }else{
                 self.window?.rootViewController = LoginVC();
             }
-        }else {
-            Window?.rootViewController =  BaseNavigationController(rootViewController: H5())
-        }
+//        }
+//        else {
+//            Window?.rootViewController =  BaseNavigationController(rootViewController: H5())
+//        }
         self.window?.makeKeyAndVisible()
         return true
     }

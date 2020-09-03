@@ -32,7 +32,7 @@ class LoginVC: BaseViewController {
            password.text = "123"
 //           code.text = "123"
         #endif
-        
+        iSTouchIDOrFaceID = UserDefaults.standard.bool(forKey: "iSTouchIDOrFaceID")
         password.isSecureTextEntry = true
         versionLabel.text = "版本号：" + Utils.appVersion()
         if iSTouchIDOrFaceID {
@@ -42,6 +42,9 @@ class LoginVC: BaseViewController {
                    let param = [
                        "username": Utils.getUserName(),
                        "password": Utils.getPassword(),
+                       "appOs": "2",
+                       "versionName": Utils.appVersion()
+
                        ]
                    HUD.show(.progress)
                    XCNetWorkTools().requestData(type: .post, api: "/api/loginWithoutCode", encoding: .JSON, parameters: param, success: { (res) in
@@ -129,15 +132,20 @@ class LoginVC: BaseViewController {
             "verifyToken":verifyToken,
             "username": name.text!.removeAllSapce(),
             "password": password.text!,
+            "appOs": "2",
+            "versionName": "Utils.appVersion()"
+
             ]
         HUD.show(.progress)
         XCNetWorkTools().requestData(type: .post, api: "/api/login", encoding: .JSON, parameters: param, success: { (res) in
 
             print(res)
-            let value = (res as! Dictionary<String, Any>)
+            var value = (res as! Dictionary<String, Any>)
             
             // 登录状态
             Utils.userDefaultSave(Key: "isLogin", Value: true)
+            
+            value.removeValue(forKey: "versionInfo")
             // 登录信息
             Utils.userDefaultSave(Key: "USER", Value: value)
             Utils.savePassword(Password: self.password.text!)

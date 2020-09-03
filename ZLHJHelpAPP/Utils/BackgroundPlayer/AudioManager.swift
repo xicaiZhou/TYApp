@@ -151,10 +151,6 @@ extension AudioManager {
         self.backgroundTimeLength += 1
         if(self.backgroundTimeLength >= 600){
             exit(0)
-//            if(UserDefaults.standard.bool(forKey: "isLogin")){
-//                NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "notification1"), object: "")
-//                removeTimer()
-//            }
         }
     }
     fileprivate func hintBackgroundTimeLength() {

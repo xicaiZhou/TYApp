@@ -39,28 +39,23 @@ class H5: BaseViewController {
             print(response ?? "")
         }
     }
-    @objc func notificationAction1(noti: Notification) {
-        print("kill干掉")
-        viewDidLoad()
-
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(notificationAction), name: NSNotification.Name(rawValue: "notification"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(notificationAction1), name: NSNotification.Name(rawValue: "notification1"), object: nil)
-
+        
         iSTouchIDOrFaceID = UserDefaults.standard.bool(forKey: "iSTouchIDOrFaceID")
         iSGesLogin = UserDefaults.standard.bool(forKey: "iSGesLogin")
         let path = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "vue")
-
+        
         let mapwayURL = URL(fileURLWithPath: path!)
-//        let mapwayURL = URL(string: "http://192.168.7.30:8080/#/")!
+//                let mapwayURL = URL(string: "http://10.1.3.6:8080/#/")!
         let mapwayRequest = URLRequest(url: mapwayURL)
         let conf = WKWebViewConfiguration()
         conf.userContentController = WKUserContentController()
         conf.preferences.javaScriptEnabled = true
         conf.selectionGranularity = WKSelectionGranularity.character
-//        /// h5 调用 swift 提供的方法
+        //        /// h5 调用 swift 提供的方法
         conf.userContentController.add(self, name: h5ToSwift)
         conf.userContentController.add(self, name: updata)
         webView = WKWebView( frame: CGRect(x:0, y:KHeight_NavBar,width:kScreenWidth, height:kScreenHeight - KHeight_NavBar - (isiPhoneX ? 34 : 0)),configuration:conf)
@@ -76,12 +71,12 @@ class H5: BaseViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
-
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         self.progressView.frame = CGRect(x:0,y:KHeight_NavBar,width:kScreenWidth,height:2)
         self.progressView.isHidden = false
         UIView.animate(withDuration: 1.0) {
@@ -91,7 +86,7 @@ class H5: BaseViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
         print("==============","\(self)","被销毁")
-
+        
     }
     
     func showLeftNavigationItem(){
@@ -105,10 +100,12 @@ class H5: BaseViewController {
                 js = "showCarModelListSearch()"
             }else if self?.titleText == "查询"{
                 js = "showCarLoanListSearch()"
+            }else if self?.titleText == "逾期查询"{
+                js = "showCovedueListSearch()"
             }
-
+            
             self!.webView.evaluateJavaScript(js) { (response, error) in
-
+                
             }
         }
         // 返回按钮
@@ -120,8 +117,8 @@ class H5: BaseViewController {
         goBackBtn.setTitle(" 返回", for: UIControl.State.highlighted)
         goBackBtn.setTitleColor(systemColor, for: UIControl.State.normal)
         goBackBtn.addTarget(self, action: #selector(goBack), for: UIControl.Event.touchUpInside)
-
-
+        
+        
     }
     
     @objc func goBack(){
@@ -144,7 +141,7 @@ class H5: BaseViewController {
             }else{
                 self.goBackBtn.isHidden = false
             }
-            if webView.title == "经销商列表"  || webView.title == "车辆品牌" || webView.title == "车辆品牌列表" || webView.title == "查询"{
+            if webView.title == "经销商列表"  || webView.title == "车辆品牌" || webView.title == "车辆品牌列表" || webView.title == "查询" || webView.title == "逾期查询"{
                 self.searchBtn.isHidden = false;
             }else{
                 self.searchBtn.isHidden = true;
@@ -361,26 +358,66 @@ extension H5: WKScriptMessageHandler {
                     }
                     break;
                 case 3:
-                    Utils.clearCache()
-                    async {
-                        let data = ["password":Utils.getPassword(),"cache":Utils.getCacheSize(),"phoneIsTouchID":self.iSTouchIDOrFaceID,"phoneIsGesture":self.iSGesLogin] as [String : Any]
-                        let param =  Dictionary.toJSONString(dict:data)
-                        let js = "systemInfo(" + param + ")"
-                        main {
-                            self.webView.evaluateJavaScript(js) { (response, error) in
-                                
+                    Alert.showAlert2(self, title: "提示", message: "是否清空缓存！", alertTitle1: "清空", style1: .default, confirmCallback1: {
+                        Utils.clearCache()
+                        async {
+                            let data = ["password":Utils.getPassword(),"cache":Utils.getCacheSize(),"phoneIsTouchID":self.iSTouchIDOrFaceID,"phoneIsGesture":self.iSGesLogin] as [String : Any]
+                            let param =  Dictionary.toJSONString(dict:data)
+                            let js = "systemInfo(" + param + ")"
+                            main {
+                                self.webView.evaluateJavaScript(js) { (response, error) in
+                                    
+                                }
                             }
                         }
-                    }
+                    }, alertTitle2: "取消", style2: .cancel) {
+                        
+                    };
+                    
+                    
                     break;
                     
                 case 4:
+                    //当前ViewController销毁前将其移除，否则会造成内存泄漏
                     //当前ViewController销毁前将其移除，否则会造成内存泄漏
                     self.webView.removeObserver(self, forKeyPath: "title")
                     self.webView.configuration.userContentController.removeScriptMessageHandler(forName: self.h5ToSwift)
                     self.webView.configuration.userContentController.removeScriptMessageHandler(forName: self.updata)
                     Utils.userDefaultSave(Key: "isLogin", Value: false)
-                    Window?.rootViewController = LoginVC();
+                    
+                    if UserDefaults.standard.bool(forKey: "iSGesLogin") && Utils.getMaxErrorCount() > 0{
+                        let vc = PatternLockSettingVC()
+                        vc.config = ArrowConfig()
+                        vc.type = .vertify
+                        vc.isLogin = true
+                        vc.vertifyScuuess = {
+                            let param = [
+                                "username": Utils.getUserName(),
+                                "password": Utils.getPassword(),
+                                "appOs": "2",
+                                "versionName": Utils.appVersion()
+                            ]
+                            HUD.show(.progress)
+                            XCNetWorkTools().requestData(type: .post, api: "/api/loginWithoutCode", encoding: .JSON, parameters: param, success: { (res) in
+                                print(res)
+                                let value = (res as! Dictionary<String, Any>)
+                                
+                                Utils.userDefaultSave(Key: "isLogin", Value: true)
+                                Utils.userDefaultSave(Key: "USER", Value: value)
+                                Utils.saveMaxErrorCount(count: 5)
+                                HUD.flash(.success, delay: 1.0) { finished in
+                                    Window?.rootViewController =  BaseNavigationController(rootViewController: H5())
+                                }
+                                
+                            }) { (error) in
+                                HUD.flash(.error, delay: 1.0)
+                            }
+                        }
+                        Window?.rootViewController = vc
+                    }else{
+                        Window?.rootViewController = LoginVC();
+                        
+                    }
                     break;
                 case 5:
                     Alert.showAlert1(self, title: "提示", message: "登录已过期，请重新登录", alertTitle: "重新登录", style: .default) {
@@ -389,7 +426,40 @@ extension H5: WKScriptMessageHandler {
                         self.webView.configuration.userContentController.removeScriptMessageHandler(forName: self.h5ToSwift)
                         self.webView.configuration.userContentController.removeScriptMessageHandler(forName: self.updata)
                         Utils.userDefaultSave(Key: "isLogin", Value: false)
-                        Window?.rootViewController = LoginVC();
+                        
+                        if UserDefaults.standard.bool(forKey: "iSGesLogin") && Utils.getMaxErrorCount() > 0{
+                            let vc = PatternLockSettingVC()
+                            vc.config = ArrowConfig()
+                            vc.type = .vertify
+                            vc.isLogin = true
+                            vc.vertifyScuuess = {
+                                let param = [
+                                    "username": Utils.getUserName(),
+                                    "password": Utils.getPassword(),
+                                    "appOs": "2",
+                                    "versionName": Utils.appVersion()
+                                ]
+                                HUD.show(.progress)
+                                XCNetWorkTools().requestData(type: .post, api: "/api/loginWithoutCode", encoding: .JSON, parameters: param, success: { (res) in
+                                    print(res)
+                                    let value = (res as! Dictionary<String, Any>)
+                                    
+                                    Utils.userDefaultSave(Key: "isLogin", Value: true)
+                                    Utils.userDefaultSave(Key: "USER", Value: value)
+                                    Utils.saveMaxErrorCount(count: 5)
+                                    HUD.flash(.success, delay: 1.0) { finished in
+                                        Window?.rootViewController =  BaseNavigationController(rootViewController: H5())
+                                    }
+                                    
+                                }) { (error) in
+                                    HUD.flash(.error, delay: 1.0)
+                                }
+                            }
+                            Window?.rootViewController = vc
+                        }else{
+                            Window?.rootViewController = LoginVC();
+                            
+                        }
                     }
                     break;
                 case 6:
@@ -441,7 +511,6 @@ extension H5: WKScriptMessageHandler {
                         index += 1
                     }
                 }
-                
             })
         }
     }
