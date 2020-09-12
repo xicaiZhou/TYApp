@@ -215,11 +215,11 @@ class Utils{
     }
     /// 8.登录成功后保留userName
     static func saveUserName(userName:String){
-        Utils.userDefaultSave(Key: "userName", Value: userName)
+        Utils.userDefaultSave(Key: "userName", Value: userName.uppercased())
     }
     /// 8.获取userName
     static func getUserName() -> String{
-        return Utils.userDefaultRead(key: "userName") as! String
+        return (Utils.userDefaultRead(key: "userName") as! String).uppercased()
     }
     /// mark RGB -> UIColor
     static func getRootPath() ->String{

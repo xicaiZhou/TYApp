@@ -52,7 +52,7 @@ class ForgetPasswordOneVC: BaseViewController {
             "CORE_SERVICENAME":"verifyUsernameAndPassword.user",
             "APP_CODE": code.text!,
              "actType": "4",
-             "username": userName.text!.removeAllSapce(),
+             "username": userName.text!.removeAllSapce().uppercased(),
             "uid" : userName.text!
         ]
 

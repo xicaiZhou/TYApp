@@ -28,7 +28,7 @@ class LoginVC: BaseViewController {
         super.viewDidLoad()
      
         #if DEBUG
-           name.text = "dev3"
+           name.text = "admin"
            password.text = "123"
 //           code.text = "123"
         #endif
@@ -40,7 +40,7 @@ class LoginVC: BaseViewController {
                 if result == .success {
                     
                    let param = [
-                       "username": Utils.getUserName(),
+                    "username": Utils.getUserName().uppercased(),
                        "password": Utils.getPassword(),
                        "appOs": "2",
                        "versionName": Utils.appVersion()
@@ -101,7 +101,7 @@ class LoginVC: BaseViewController {
         
         let vc = ForgetPasswordOneVC()
         vc.type = .forget
-        vc.name = name.text
+        vc.name = name.text?.uppercased()
         let nav = BaseNavigationController(rootViewController:vc)
         self.present(nav, animated: true, completion: nil)
         
@@ -130,10 +130,10 @@ class LoginVC: BaseViewController {
         let param = [
             "code": code.text!,
             "verifyToken":verifyToken,
-            "username": name.text!.removeAllSapce(),
+            "username": name.text!.removeAllSapce().uppercased(),
             "password": password.text!,
             "appOs": "2",
-            "versionName": "Utils.appVersion()"
+            "versionName": Utils.appVersion()
 
             ]
         HUD.show(.progress)

@@ -49,7 +49,7 @@ class H5: BaseViewController {
         let path = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "vue")
         
         let mapwayURL = URL(fileURLWithPath: path!)
-//                let mapwayURL = URL(string: "http://10.1.3.6:8080/#/")!
+//                let mapwayURL = URL(string: "http://192.168.7.30:8080/#/")!
         let mapwayRequest = URLRequest(url: mapwayURL)
         let conf = WKWebViewConfiguration()
         conf.userContentController = WKUserContentController()
