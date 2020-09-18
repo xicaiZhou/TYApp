@@ -12,7 +12,11 @@ import PKHUD
 
 class LoginVC: BaseViewController {
 
-
+    @IBOutlet weak var line1: UIView!
+    @IBOutlet weak var line2: UIView!
+    @IBOutlet weak var line3: UIView!
+    @IBOutlet weak var loginBtn: UIButton!
+    
     @IBOutlet weak var isShowPassword: UIButton!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var name: UITextField!
@@ -26,10 +30,14 @@ class LoginVC: BaseViewController {
     fileprivate var timeCount:Int = 60
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        self.line1.backgroundColor = systemColor
+        self.line2.backgroundColor = systemColor
+        self.line3.backgroundColor = systemColor
+        self.forgetPassword.setTitleColor(systemColor, for: .normal)
+        self.loginBtn.backgroundColor = systemColor
         #if DEBUG
-           name.text = "admin"
-           password.text = "123"
+           name.text = "dev2"
+           password.text = "a12345678"
 //           code.text = "123"
         #endif
         iSTouchIDOrFaceID = UserDefaults.standard.bool(forKey: "iSTouchIDOrFaceID")
@@ -137,6 +145,7 @@ class LoginVC: BaseViewController {
 
             ]
         HUD.show(.progress)
+       
         XCNetWorkTools().requestData(type: .post, api: "/api/login", encoding: .JSON, parameters: param, success: { (res) in
 
             print(res)
@@ -158,7 +167,7 @@ class LoginVC: BaseViewController {
 
         }) { (error) in
             HUD.flash(.error, delay: 1.0)
-
+            self.getVerifyCode()
         }
     }
    

@@ -32,7 +32,7 @@ let KBottomView_Height: CGFloat = isiPhoneX ? 104 : 70
 /// 控件是否减去tabBar高度
 let KBottomTabBar_Height: CGFloat = isiPhoneX ? 44 : 0
 //color
-let systemColor: UIColor = UIColor.colorWithHex(hex:0xFD9226)
+let systemColor: UIColor = UIColor.colorWithHex(hex:0x385783)
 let textFontColor: UIColor = UIColor.colorWithHex(hex: 0x333333)
 let textGrayColor: UIColor = UIColor.colorWithHex(hex: 0xD8D8DB)
 

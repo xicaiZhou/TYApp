@@ -17,14 +17,22 @@ enum ChangePasswordType {
 
 class ForgetPasswordOneVC: BaseViewController {
 
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var line2: UIView!
+    @IBOutlet weak var line1: UIView!
     var type: ChangePasswordType!
     var name: String!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var code: UITextField!
     @IBOutlet weak var getCodeBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "安全验证"
+        self.line1.backgroundColor = systemColor
+        self.line2.backgroundColor = systemColor
+        self.getCodeBtn.backgroundColor = systemColor
+        self.nextBtn.backgroundColor = systemColor
         userName.text = name
         self.setupBarButtonItemSelectorName { [weak self] in
             self?.dismiss(animated: true, completion: nil)

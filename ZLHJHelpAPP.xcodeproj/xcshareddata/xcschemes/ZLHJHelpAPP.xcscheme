@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22BCCE1C2320EA8900AA0CD5"
-               BuildableName = "&#x62d3;&#x708e;&#x8f66;&#x91d1;&#x878d;.app"
+               BuildableName = "&#x62d3;&#x708e;.app"
                BlueprintName = "ZLHJHelpAPP"
                ReferencedContainer = "container:ZLHJHelpAPP.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22BCCE1C2320EA8900AA0CD5"
-            BuildableName = "&#x62d3;&#x708e;&#x8f66;&#x91d1;&#x878d;.app"
+            BuildableName = "&#x62d3;&#x708e;.app"
             BlueprintName = "ZLHJHelpAPP"
             ReferencedContainer = "container:ZLHJHelpAPP.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22BCCE1C2320EA8900AA0CD5"
-            BuildableName = "&#x62d3;&#x708e;&#x8f66;&#x91d1;&#x878d;.app"
+            BuildableName = "&#x62d3;&#x708e;.app"
             BlueprintName = "ZLHJHelpAPP"
             ReferencedContainer = "container:ZLHJHelpAPP.xcodeproj">
          </BuildableReference>

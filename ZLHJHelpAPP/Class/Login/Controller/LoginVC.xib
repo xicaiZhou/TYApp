@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="拓炎车金融" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="拓炎" customModuleProvider="target">
             <connections>
                 <outlet property="code" destination="jPb-rG-WOC" id="x0e-VT-0HG"/>
                 <outlet property="forgetPassword" destination="foW-mh-GZM" id="5U6-ut-14O"/>
                 <outlet property="getCode" destination="WPL-Ak-Yqj" id="aHa-zA-sef"/>
                 <outlet property="isShowPassword" destination="5y6-gA-GIh" id="nD6-dG-TKa"/>
+                <outlet property="line1" destination="gZJ-y5-rCI" id="cUg-pp-TGD"/>
+                <outlet property="line2" destination="lcL-yl-oYT" id="Z4W-Lx-4XG"/>
+                <outlet property="line3" destination="Edu-BA-mo7" id="Nkl-tZ-cxJ"/>
+                <outlet property="loginBtn" destination="md7-Vb-GL6" id="hqJ-S2-G4M"/>
                 <outlet property="name" destination="zs4-RN-qc5" id="t3U-yu-cVc"/>
                 <outlet property="password" destination="WX7-mo-eZb" id="CYb-Wa-r0B"/>
                 <outlet property="versionLabel" destination="Y6y-QA-vS1" id="PMx-UE-ExF"/>
@@ -35,7 +40,7 @@
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZJ-y5-rCI">
                     <rect key="frame" x="16" y="303.5" width="382" height="0.5"/>
-                    <color key="backgroundColor" red="0.89411764709999997" green="0.50196078430000002" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.58039215686274503" green="0.67843137254901964" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.69999999999999996" id="xLR-Yg-JDr"/>
                     </constraints>
@@ -48,7 +53,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPL-Ak-Yqj">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPL-Ak-Yqj">
                     <rect key="frame" x="284" y="390" width="113" height="30"/>
                     <state key="normal">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,15 +75,15 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="md7-Vb-GL6">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="md7-Vb-GL6">
                     <rect key="frame" x="40" y="512" width="334" height="45"/>
-                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="wU1-vm-zzr"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <state key="normal" title="登  录">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" systemColor="tertiarySystemBackgroundColor"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -89,13 +94,13 @@
                         <action selector="login:" destination="-1" eventType="touchUpInside" id="F0c-c3-6Sx"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foW-mh-GZM" userLabel="Forget Password">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foW-mh-GZM" userLabel="Forget Password">
                     <rect key="frame" x="284" y="441" width="113" height="31"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="ZOG-Lz-cYG"/>
                     </constraints>
                     <state key="normal" title="忘记密码？">
-                        <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.58039215686274503" green="0.67843137254901964" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="forgetPasswordAction:" destination="-1" eventType="touchUpInside" id="92W-gG-r8h"/>
@@ -103,14 +108,14 @@
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcL-yl-oYT">
                     <rect key="frame" x="16" y="363.5" width="382" height="1"/>
-                    <color key="backgroundColor" red="0.89411764709999997" green="0.50196078430000002" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.58039215686274503" green="0.67843137254901964" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.69999999999999996" id="AcI-kC-ZYp"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edu-BA-mo7">
                     <rect key="frame" x="16" y="424.5" width="382" height="1"/>
-                    <color key="backgroundColor" red="0.89411764709999997" green="0.50196078430000002" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.58039215686274503" green="0.67843137254901964" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.69999999999999996" id="Mgv-LC-EcE"/>
                     </constraints>
@@ -163,6 +168,7 @@
                     </connections>
                 </button>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="foW-mh-GZM" firstAttribute="width" secondItem="WPL-Ak-Yqj" secondAttribute="width" id="0OJ-Od-DKo"/>
@@ -205,12 +211,14 @@
                 <constraint firstItem="Edu-BA-mo7" firstAttribute="top" secondItem="jPb-rG-WOC" secondAttribute="bottom" constant="-0.5" id="yss-Q2-rnA"/>
                 <constraint firstItem="UwY-hV-n8c" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="zAH-jf-p6n"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="143.97321428571428"/>
         </view>
     </objects>
     <resources>
         <image name="app-icon" width="109.5" height="109.5"/>
         <image name="闭眼" width="24" height="24"/>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -30,6 +30,7 @@
 		22956F4F2369894700C7E611 /* UIButton+ZXCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 22956F4D2369894600C7E611 /* UIButton+ZXCTool.m */; };
 		2298DE532361595800CA538B /* 绑定微信公众号.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 2298DE522361595800CA538B /* 绑定微信公众号.pptx */; };
 		2298DE552361A38700CA538B /* Int-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2298DE542361A38700CA538B /* Int-Extension.swift */; };
+		22B7E2D225134A7900810774 /* vue in Resources */ = {isa = PBXBuildFile; fileRef = 22B7E2D125134A7900810774 /* vue */; };
 		22BCCE212320EA8900AA0CD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BCCE202320EA8900AA0CD5 /* AppDelegate.swift */; };
 		22BCCE262320EA8900AA0CD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22BCCE242320EA8900AA0CD5 /* Main.storyboard */; };
 		22BCCE282320EA8B00AA0CD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22BCCE272320EA8B00AA0CD5 /* Assets.xcassets */; };
@@ -44,7 +45,6 @@
 		22BCCE772321178E00AA0CD5 /* XCNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BCCE642321178D00AA0CD5 /* XCNetwork.swift */; };
 		22BCCE7D2321178E00AA0CD5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BCCE6B2321178D00AA0CD5 /* Utils.swift */; };
 		22BCCF1C2322110800AA0CD5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BCCF1B2322110800AA0CD5 /* UserModel.swift */; };
-		22BDF018250B307F007784AE /* vue in Resources */ = {isa = PBXBuildFile; fileRef = 22BDF017250B307F007784AE /* vue */; };
 		22CA0DD323320A8200AEB727 /* ForgetPasswordOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA0DD123320A8200AEB727 /* ForgetPasswordOneVC.swift */; };
 		22CA0DD423320A8200AEB727 /* ForgetPasswordOneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22CA0DD223320A8200AEB727 /* ForgetPasswordOneVC.xib */; };
 		22CA0DD723320FF400AEB727 /* ForgetPasswordTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA0DD523320FF400AEB727 /* ForgetPasswordTwoVC.swift */; };
@@ -94,6 +94,7 @@
 		22956F4E2369894700C7E611 /* UIButton+ZXCTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ZXCTool.h"; sourceTree = "<group>"; };
 		2298DE522361595800CA538B /* 绑定微信公众号.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "绑定微信公众号.pptx"; sourceTree = "<group>"; };
 		2298DE542361A38700CA538B /* Int-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int-Extension.swift"; sourceTree = "<group>"; };
+		22B7E2D125134A7900810774 /* vue */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vue; sourceTree = "<group>"; };
 		22BCCE1D2320EA8900AA0CD5 /* 拓炎.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "拓炎.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BCCE202320EA8900AA0CD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22BCCE252320EA8900AA0CD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,7 +116,6 @@
 		22BCCE6B2321178D00AA0CD5 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		22BCCE812321189B00AA0CD5 /* ZLHJHelpAPP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZLHJHelpAPP-Bridging-Header.h"; sourceTree = "<group>"; };
 		22BCCF1B2322110800AA0CD5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		22BDF017250B307F007784AE /* vue */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vue; sourceTree = "<group>"; };
 		22CA0DD123320A8200AEB727 /* ForgetPasswordOneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordOneVC.swift; sourceTree = "<group>"; };
 		22CA0DD223320A8200AEB727 /* ForgetPasswordOneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordOneVC.xib; sourceTree = "<group>"; };
 		22CA0DD523320FF400AEB727 /* ForgetPasswordTwoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordTwoVC.swift; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 		22BCCE85232118F900AA0CD5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				22BDF017250B307F007784AE /* vue */,
+				22B7E2D125134A7900810774 /* vue */,
 				99C898A0246ABF0C003B93FB /* help.pdf */,
 				22BCCE202320EA8900AA0CD5 /* AppDelegate.swift */,
 				22BCCE242320EA8900AA0CD5 /* Main.storyboard */,
@@ -512,7 +512,7 @@
 				227AEE1524970CE500B8BF0A /* 清晨.mp3 in Resources */,
 				99C898A1246ABF0C003B93FB /* help.pdf in Resources */,
 				22BCCE282320EA8B00AA0CD5 /* Assets.xcassets in Resources */,
-				22BDF018250B307F007784AE /* vue in Resources */,
+				22B7E2D225134A7900810774 /* vue in Resources */,
 				220A62D424C06E240013A31D /* SettingFourCell.xib in Resources */,
 				226186D42328EC75003A25E6 /* LoginVC.xib in Resources */,
 				22BCCE262320EA8900AA0CD5 /* Main.storyboard in Resources */,

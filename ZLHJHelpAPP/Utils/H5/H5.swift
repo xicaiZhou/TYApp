@@ -27,7 +27,7 @@ class H5: BaseViewController {
     // 进度条
     lazy var progressView:UIProgressView = {
         let progress = UIProgressView()
-        progress.progressTintColor = UIColor.orange
+        progress.progressTintColor = systemColor
         progress.trackTintColor = .clear
         return progress
     }()
@@ -48,8 +48,8 @@ class H5: BaseViewController {
         iSGesLogin = UserDefaults.standard.bool(forKey: "iSGesLogin")
         let path = Bundle.main.path(forResource: "index", ofType: "html", inDirectory: "vue")
         
-        let mapwayURL = URL(fileURLWithPath: path!)
-//                let mapwayURL = URL(string: "http://192.168.7.30:8080/#/")!
+//        let mapwayURL = URL(fileURLWithPath: path!)
+                let mapwayURL = URL(string: "http://192.168.7.30:8080/#/")!
         let mapwayRequest = URLRequest(url: mapwayURL)
         let conf = WKWebViewConfiguration()
         conf.userContentController = WKUserContentController()
@@ -77,7 +77,7 @@ class H5: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.progressView.frame = CGRect(x:0,y:KHeight_NavBar,width:kScreenWidth,height:2)
+        self.progressView.frame = CGRect(x:0,y:KHeight_NavBar,width:kScreenWidth,height:1)
         self.progressView.isHidden = false
         UIView.animate(withDuration: 1.0) {
             self.progressView.progress = 0.0

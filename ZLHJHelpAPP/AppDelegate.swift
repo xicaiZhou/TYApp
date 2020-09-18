@@ -12,7 +12,9 @@
 //小图http://tuoyan.vipgz1.idcfengye.com/api/resource/TYApp/iOS/logo/logo2.png
 //大图http://tuoyan.vipgz1.idcfengye.com/api/resource/TYApp/iOS/logo/logo1.png
 
-
+//385783 深一点
+//70A9D1 谭臻 8FB0CF 6197E4 99CCFF
+//94ADD1 浅一点
 import UIKit
 import IQKeyboardManagerSwift
 import PKHUD

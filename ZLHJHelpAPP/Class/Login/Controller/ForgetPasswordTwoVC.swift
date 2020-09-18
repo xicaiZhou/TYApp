@@ -14,6 +14,8 @@ class ForgetPasswordTwoVC: BaseViewController {
     
     var userName:String!
     var code:String!
+    @IBOutlet weak var line1: UIView!
+    @IBOutlet weak var line2: UIView!
     
     @IBOutlet weak var isShowPassword: UIButton!
     @IBOutlet weak var finishBtn: UIButton!
@@ -22,6 +24,9 @@ class ForgetPasswordTwoVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "修改密码"
+        self.line2.backgroundColor = systemColor
+        self.line1.backgroundColor = systemColor
+        self.finishBtn.backgroundColor = systemColor
         newPassword.isSecureTextEntry = true
         confirmPassword.isSecureTextEntry = true
         self.setupBarButtonItemSelectorName {
