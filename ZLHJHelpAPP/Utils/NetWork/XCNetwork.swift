@@ -98,8 +98,8 @@ private func XCNetwork(network : NetworkEnvironment = CurrentNetWork){
         Base_Url = "http://192.168.90.101:8080/zlhj_interface/appHelper/"
         
     }else{
-//        Base_Url = "http://tuoyan.vipgz1.idcfengye.com"
-         Base_Url = "http://dacsit.vipgz1.idcfengye.com"
+        Base_Url = "http://tuoyan.vipgz1.idcfengye.com"
+//         Base_Url = "http://dacsit.vipgz1.idcfengye.com"
     }
 }
 

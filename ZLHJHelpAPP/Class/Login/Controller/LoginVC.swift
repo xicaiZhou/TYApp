@@ -36,8 +36,8 @@ class LoginVC: BaseViewController {
         self.forgetPassword.setTitleColor(systemColor, for: .normal)
         self.loginBtn.backgroundColor = systemColor
         #if DEBUG
-           name.text = "dev2"
-           password.text = "a12345678"
+           name.text = "admin"
+           password.text = "123"
 //           code.text = "123"
         #endif
         iSTouchIDOrFaceID = UserDefaults.standard.bool(forKey: "iSTouchIDOrFaceID")
@@ -57,9 +57,10 @@ class LoginVC: BaseViewController {
                    HUD.show(.progress)
                    XCNetWorkTools().requestData(type: .post, api: "/api/loginWithoutCode", encoding: .JSON, parameters: param, success: { (res) in
                        print(res)
-                       let value = (res as! Dictionary<String, Any>)
+                    var value = (res as! Dictionary<String, Any>)
                        
                        Utils.userDefaultSave(Key: "isLogin", Value: true)
+                    value.removeValue(forKey: "versionInfo")
                        Utils.userDefaultSave(Key: "USER", Value: value)
                        Utils.saveMaxErrorCount(count: 5)
                        HUD.flash(.success, delay: 1.0) { finished in

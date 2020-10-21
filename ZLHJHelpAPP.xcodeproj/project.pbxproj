@@ -13,6 +13,7 @@
 		220A62D624C06E240013A31D /* SettingThreeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220A62D224C06E240013A31D /* SettingThreeCell.xib */; };
 		2215F2E32329EE2100274C9D /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215F2E22329EE2100274C9D /* NibLoadable.swift */; };
 		2215F3172330B83600274C9D /* Array-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215F3162330B83600274C9D /* Array-Extension.swift */; };
+		2222951425246DCA0041DD60 /* vue in Resources */ = {isa = PBXBuildFile; fileRef = 2222951325246DCA0041DD60 /* vue */; };
 		2228AD94247BC652003CFA02 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228AD93247BC652003CFA02 /* AudioManager.swift */; };
 		2228AD98247BD077003CFA02 /* HintTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2228AD97247BD077003CFA02 /* HintTool.swift */; };
 		2229A2D22333B8C2000C8153 /* PatternLockManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2229A2D12333B8C2000C8153 /* PatternLockManagerVC.swift */; };
@@ -30,7 +31,6 @@
 		22956F4F2369894700C7E611 /* UIButton+ZXCTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 22956F4D2369894600C7E611 /* UIButton+ZXCTool.m */; };
 		2298DE532361595800CA538B /* 绑定微信公众号.pptx in Resources */ = {isa = PBXBuildFile; fileRef = 2298DE522361595800CA538B /* 绑定微信公众号.pptx */; };
 		2298DE552361A38700CA538B /* Int-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2298DE542361A38700CA538B /* Int-Extension.swift */; };
-		22B7E2D225134A7900810774 /* vue in Resources */ = {isa = PBXBuildFile; fileRef = 22B7E2D125134A7900810774 /* vue */; };
 		22BCCE212320EA8900AA0CD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BCCE202320EA8900AA0CD5 /* AppDelegate.swift */; };
 		22BCCE262320EA8900AA0CD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22BCCE242320EA8900AA0CD5 /* Main.storyboard */; };
 		22BCCE282320EA8B00AA0CD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22BCCE272320EA8B00AA0CD5 /* Assets.xcassets */; };
@@ -76,6 +76,7 @@
 		220A62D224C06E240013A31D /* SettingThreeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingThreeCell.xib; sourceTree = "<group>"; };
 		2215F2E22329EE2100274C9D /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		2215F3162330B83600274C9D /* Array-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array-Extension.swift"; sourceTree = "<group>"; };
+		2222951325246DCA0041DD60 /* vue */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vue; sourceTree = "<group>"; };
 		2228AD93247BC652003CFA02 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		2228AD97247BD077003CFA02 /* HintTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintTool.swift; sourceTree = "<group>"; };
 		2229A2D12333B8C2000C8153 /* PatternLockManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternLockManagerVC.swift; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		22956F4E2369894700C7E611 /* UIButton+ZXCTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ZXCTool.h"; sourceTree = "<group>"; };
 		2298DE522361595800CA538B /* 绑定微信公众号.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "绑定微信公众号.pptx"; sourceTree = "<group>"; };
 		2298DE542361A38700CA538B /* Int-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int-Extension.swift"; sourceTree = "<group>"; };
-		22B7E2D125134A7900810774 /* vue */ = {isa = PBXFileReference; lastKnownFileType = folder; path = vue; sourceTree = "<group>"; };
 		22BCCE1D2320EA8900AA0CD5 /* 拓炎.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "拓炎.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BCCE202320EA8900AA0CD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22BCCE252320EA8900AA0CD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 		22BCCE85232118F900AA0CD5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				22B7E2D125134A7900810774 /* vue */,
+				2222951325246DCA0041DD60 /* vue */,
 				99C898A0246ABF0C003B93FB /* help.pdf */,
 				22BCCE202320EA8900AA0CD5 /* AppDelegate.swift */,
 				22BCCE242320EA8900AA0CD5 /* Main.storyboard */,
@@ -512,7 +512,7 @@
 				227AEE1524970CE500B8BF0A /* 清晨.mp3 in Resources */,
 				99C898A1246ABF0C003B93FB /* help.pdf in Resources */,
 				22BCCE282320EA8B00AA0CD5 /* Assets.xcassets in Resources */,
-				22B7E2D225134A7900810774 /* vue in Resources */,
+				2222951425246DCA0041DD60 /* vue in Resources */,
 				220A62D424C06E240013A31D /* SettingFourCell.xib in Resources */,
 				226186D42328EC75003A25E6 /* LoginVC.xib in Resources */,
 				22BCCE262320EA8900AA0CD5 /* Main.storyboard in Resources */,

@@ -122,6 +122,10 @@ class H5: BaseViewController {
     }
     
     @objc func goBack(){
+        
+        self.webView.evaluateJavaScript("hideHUD()") { (response, error) in
+            print(response ?? "")
+        }
         if self.webView.canGoBack {
             self.webView.goBack()
         }else {
